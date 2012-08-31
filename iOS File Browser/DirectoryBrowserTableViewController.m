@@ -10,14 +10,12 @@
 
 @interface DirectoryBrowserTableViewController() 
 
-@property (retain) NSArray *files;
+@property (strong) NSArray *files;
 
 @end
 
 @implementation DirectoryBrowserTableViewController
 
-@synthesize path = _path;
-@synthesize files = _files;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,7 +31,7 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - 
+#pragma mark - Paths and files
 
 - (NSString *)pathForFile:(NSString *)file {
 	return [self.path stringByAppendingPathComponent:file];
@@ -149,8 +147,8 @@
 		[self.navigationController pushViewController:dbtvc animated:YES];
 	} else {
 		MFMailComposeViewController *mcvc = [[MFMailComposeViewController alloc] init];
-		[mcvc setSubject:@"DirectoryBrowser File"];
-		[mcvc setMessageBody:[NSString stringWithFormat:@"File %@ from DirectoryBrowser is attached", file] isHTML:NO];
+		[mcvc setSubject:file];
+		[mcvc setMessageBody:[NSString stringWithFormat:@"File '%@' from iOS File Browser is attached", file] isHTML:NO];
 		mcvc.mailComposeDelegate = self;
 		NSString *ext = [file pathExtension];
 		NSData *data = [NSData dataWithContentsOfFile:path];

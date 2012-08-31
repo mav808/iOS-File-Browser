@@ -10,14 +10,8 @@
 
 @interface DirectoryBrowserTableViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
 	
-@private
-	
-	NSString *_path;
-	
-	NSArray *_files;
-	
 }
 
-@property (retain) NSString *path;
+@property (strong) NSString *path;
 
 @end
