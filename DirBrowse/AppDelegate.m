@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  iOS File Browser
+//  DirBrowse
 //
-//  Created by marek on 31/08/2012.
-//  Copyright (c) 2012 marekbell. All rights reserved.
+//  Created by marek on 18/06/2013.
+//  Copyright (c) 2013 Dynamically Loaded. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -12,7 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     return YES;
 }
 							

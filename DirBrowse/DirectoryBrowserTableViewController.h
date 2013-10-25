@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@import MessageUI;
+@import CoreLocation;
+
 @interface DirectoryBrowserTableViewController : UITableViewController <MFMailComposeViewControllerDelegate> {
+	
+@private
+	
+	NSString *_path;
+	
+	NSArray *_files;
 	
 }
 
